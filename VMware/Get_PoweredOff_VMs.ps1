@@ -1,0 +1,1 @@
+Get-VM | where {$_.powerstate -eq 'PoweredOff'} | Select Name, @{N="Datastore";E={[string]::Join(',',(Get-Datastore -Id $_.DatastoreIdList | Select -ExpandProperty Name))}}
