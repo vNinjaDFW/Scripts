@@ -1,0 +1,9 @@
+$oldEmail = 'XXX'
+$newEmail = 'XXX'
+
+foreach ($alarm in Get-AlarmDefinition){
+    $action = Get-AlarmAction -AlarmDefinition $alarm
+    $mail = $action | where {$_.ActionType -eq 'SendEmail' -and $_.To -contains $oldEmail}
+    Remove-AlarmAction -AlarmAction $mail -Confirm:$false
+    New-AlarmAction -AlarmDefinition $alarm -Email -To $newEmail -Subject $mail.Subject -Confirm:$false
+}
