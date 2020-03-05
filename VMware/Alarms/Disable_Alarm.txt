@@ -1,0 +1,5 @@
+$DisabledAlarm = "Virtual Machine Memory*"
+Get-AlarmDefinition -Name $DisabledAlarm | Get-AlarmAction -ActionType SendEmail | Remove-AlarmAction -Confirm:$false
+Disconnect-VIServer * -Confirm:$false
+CD\
+.\Connection.ps1
