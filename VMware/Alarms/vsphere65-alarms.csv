@@ -1,0 +1,205 @@
+Name,Description,Priority,Notes,IfUsed
+Appliance Management Health Alarm,Appliance Management service alarm to monitor health status,Low,,
+Cannot connect to storage,Default alarm to monitor host connectivity to storage device,High,,
+Cannot find vSphere HA master agent,Default alarm to alert when vCenter Server has been unable to connect to a vSphere HA master agent for a prolonged period,High,,
+Certificate Status,Default alarm that monitors whether a certificate is getting close to its expiration date.,Low,,
+Cis License Health Alarm,Cis License service alarm to monitor health status,Low,,
+Component Manager Service Health Alarm,Default alarm that monitors the health status of Component Manager Service.,Medium,New in 6.5,
+Content Library Service Health Alarm,Default alarm that monitors the health status of the VMware Content Library Service.,Low,,
+Data Service Health Alarm,Data Service service alarm to monitor health status,Medium,,Medium
+Database Health Alarm,Default alarm that monitors the database health status.,High,New in 6.5,
+Datastore capability alarm,Default alarm that is triggered when the capability status of volumes backing the datastore changes,Low,,
+Datastore cluster is out of space,Alarm that monitors when a datastore cluster is out of space,High,,
+Datastore compliance alarm,Default alarm that is triggered when the virtual disk on the datastore goes out of compliance with the object-based storage,Low,,
+Datastore is in multiple datacenters,Datastore in a datastore cluster is visible in more than one datacenter,Low,,
+Datastore usage on disk,Default alarm to monitor datastore disk usage,Medium,,
+Errors occurred on the disk(s) of a vSAN host,Default alarm that monitors whether there are errors on the host disk(s) in the vSAN cluster.,Medium,,
+ESX Agent Manager Health Alarm,ESX Agent Manager service alarm to monitor health status,Low,,
+ESXi Host Certificate Status,Alarm to indicate certificate status of an ESXi host,Low,,
+Exit standby error,Default alarm to monitor if a host cannot exit standby mode,Low,,
+Expired host license,Default alarm to monitor for expired host license or evaluation period.,Medium,,
+Expired host time-limited license,Default alarm to monitor for expired host time-limited license.,Medium,,
+Expired vCenter Server license,Default alarm to monitor for expired vCenter Server license or evaluation period.,Medium,,
+Expired vCenter Server time-limited license,Default alarm to monitor for expired vCenter Server time-limited license.,Medium,,
+Expired vSAN license,Default alarm for expired vSAN license or evaluation period.,Medium,,
+Expired vSAN time-limited license,Default alarm to monitor for expired vSAN time-limited license.,Medium,,
+Health status changed alarm,Default alarm to monitor changes to service and extension health status,Medium,,
+Host Baseboard Management Controller status,Monitors the status of the Baseboard Management Controller. See the host's Hardware Status tab for more details.,Low,,
+Host battery status,Default alarm to monitor batteries.  See the host's Hardware Status tab for more details.,High,,
+Host connection and power state,Default alarm to monitor host connection and power state,High,,
+Host connection failure,Default alarm to monitor host connection failure,High,,
+Host CPU usage,Default alarm to monitor host CPU usage,Medium,,
+Host error,Default alarm to monitor host error and warning events,High,,
+Host hardware fan status,Default alarm to monitor fans.  See the host's Hardware Status tab for more details.,High,,
+Host hardware power status,Default alarm to monitor power.  See the host's Hardware Status tab for more details.,High,,
+Host hardware system board status,Default alarm to monitor system boards.  See the host's Hardware Status tab for more details.,High,,
+Host hardware temperature status,Default alarm to monitor temperature.  See the host's Hardware Status tab for more details.,High,,
+Host hardware voltage,Default alarm to monitor voltage.  See the host's Hardware Status tab for more details.,High,,
+Host IP Address Conflict Alarm,Default alarm to indicate that the host has taken an IP address that conflicts with another host.,High,New in 6.5,
+Host IPMI System Event Log status,Monitors the fullness of the IPMI System Event Log.  See the host's Hardware Status tab for more details.,Low,,
+Host memory status,Default alarm to monitor memory.  See the host's Hardware Status tab for more details.,High,,
+Host memory usage,Default alarm to monitor host memory usage,Medium,,
+Host processor status,Default alarm to monitor processors.  See the host's Hardware Status tab for more details.,High,,
+Host storage status,Default alarm to monitor storage.  See the host's Hardware Status tab for more details.,High,,
+Host virtual flash resource status,Default alarm to monitor the VMware Flash Read Cache resource status on the host,Low,,
+Host virtual flash resource usage,Default alarm to monitor the VMware Flash Read Cache resource usage on the host,Low,,
+Identity Health Alarm,Identity service alarm to monitor health status,Low,,
+Image Builder Service Health Alarm,Default alarm that monitors the health status of Image Builder Service.,Low,,
+Insufficient vSphere HA failover resources,Default alarm to alert when there are insufficient cluster resources for vSphere HA to guarantee failover,Low,,
+License capacity monitoring,Default alarm to monitor if a license capacity is exceeded,Low,,
+License error,Default alarm to monitor license errors,Low,,
+License inventory monitoring,Default alarm to monitor if license inventory is not compliant,Low,,
+License user threshold monitoring,Default alarm to monitor if a user-defined license threshold is exceeded,Low,,
+Message Bus Config Health Alarm,Message Bus Config service alarm to monitor health status,Medium,,
+Migration error,"Default alarm to monitor if a virtual machine cannot migrate, relocate, or is orphaned",Low,,
+Network connectivity lost,Default alarm to monitor network connectivity on a virtual switch,High,,
+Network uplink redundancy degraded,Default alarm to monitor network uplink redundancy degradation on a virtual switch,High,,
+Network uplink redundancy lost,Default alarm to monitor loss of network uplink redundancy on a virtual switch,High,,
+No compatible host for Secondary VM,Default alarm to monitor if no compatible hosts are available to place Secondary VM,Low,,
+Object type storage alarm,Default alarm that is triggered when a VASA provider raises an Object type alarm on an entity backing the datastore,Medium,,
+Performance Charts Service Health Alarm,Performance Charts Service alarm to monitor health status,Low,,
+PostgreSQL Service Health Alarm,Default alarm that monitors the health status of the PostgreSQL Service.,High,New in 6.5,
+PSC Service Health Alarm.,Default alarm that monitors the health status of PSC Service.,High,New in 6.5,
+RBD Health Alarm,RBD service alarm to monitor health status,Disabled,Only needed if using Autodeploy,
+Refreshing CA certificates and CRLs for a VASA provider failed,Default alarm that monitors whether the refreshing of CA certificates and CRLs for some of the VASA providers has failed.,Low,,
+Registration/unregistration of a VASA vendor provider on a vSAN host fails,Default alarm that monitors whether the registration or unregistration of a VASA vendor provider on a vSAN host fails.,Low,,
+Registration/unregistration of third-party IO filter storage providers fails on a host,Default alarm that monitors whether vCenter Server fails to register or unregister third-party IO filter storage providers on a host.,Low,,
+Service Control Agent Health Alarm,Alarm that is triggered when the Service Control Agent is not reachable.,Low,,
+Status of other host hardware objects,Default alarm to monitor objects.  See the host's Hardware Status tab for more details.,High,,
+Storage DRS is not supported on a host,Alarm that monitors and alerts when Storage DRS is not supported on a host,Low,,
+Storage DRS recommendation,Alarm that monitors a Storage DRS recommendation,Low,,
+The host license edition is not compatible with the vCenter Server license edition,Default alarm to monitor if host license edition is not allowed,Low,,
+Thin-provisioned volume capacity threshold exceeded,Default alarm that is triggered when the thin provisioning threshold on the storage array is exceeded for volume(s) backing the datastore,High,,
+Timed out starting Secondary VM,Default alarm to monitor time-outs when starting a Secondary VM,Low,,
+Unmanaged workload detected on SIOC-enabled datastore,Default alarm that is triggered if an unmanaged I/O workload is detected on a SIOC-enabled datastore,Low,,
+Update Manager Service Health Alarm,Default alarm that monitors the health status of Update Manager Service.,Low,New in 6.5,
+VASA Provider certificate expiration alarm,Default alarm that is triggered when a VASA Provider certificate is about to expire,Low,,
+VASA provider disconnected,Default alarm that is triggered when a VASA provider is in a disconnected state,Low,,
+vCenter HA Cluster Health Alarm,Default alarm that monitors the health of vCenter HA,Medium,New in 6.5,
+vCenter HA Service Health Alarm.,Default alarm that monitors the health status of vCenter HA Service.,Medium,New in 6.5,
+vCenter Server Health Alarm,vCenter Server service alarm to monitor health status,Medium,,
+vCenter Stats Monitor Service Health Alarm.,Default alarm that monitors the health status of vCenter Stats Monitor Service.,Low,New in 6.5,
+Virtual Datacenter Service Health Alarm,Default alarm that monitors the health status of the VMware Virtual Datacenter Service.,Medium,New in 6.5,
+Virtual machine Consolidation Needed status,Default alarm that is triggered when virtual machine Consolidation Needed status is set,Medium,,
+Virtual machine CPU usage,Default alarm to monitor virtual machine CPU usage,Disabled,Too many alerts,Low
+Virtual machine error,Default alarm to monitor virtual machine error and warning events,Medium,,
+Virtual machine Fault Tolerance state changed,Default alarm to monitor changes in the Fault Tolerance state of a virtual machine,Medium,,
+Virtual Machine Fault Tolerance vLockStep interval Status Changed,Default Alarm to monitor changes in the Fault Tolerance Secondary vLockStep interval,Medium,,
+Virtual machine memory usage,Default alarm to monitor virtual machine memory usage,Disabled,Too many alerts,Low
+Virtual Machine network adapter reservation status,Default alarm to monitor changes in the reservation status of a virtual machine network adapter,Medium,,
+VM MAC Conflict,Default alarm that monitors VM MAC conflicts.,Low,New in 6.5,
+VM storage compliance alarm,Default alarm that is triggered when the virtual disk goes out of compliance with the object-based storage,Low,,
+VMKernel NIC not configured correctly,Default alarm for incorrectly configured VMkernel NIC,Medium,,
+vMon API Service Health Alarm,Default alarm that monitors the health status of vMon API Service.,Medium,New in 6.5,
+VMware HTTP Reverse Proxy Service Health Alarm.,Default alarm that monitors the health status of HTTP Reverse Proxy Service.,Medium,New in 6.5,
+VMware vAPI Endpoint Service Health Alarm,Default alarm that monitors the health status of the VMware vAPI Endpoint Service.,Medium,,
+VMware vCenter-Services Health Alarm,VMware vCenter-Services alarm to monitor health status,Medium,New in 6.5,
+VMware vSphere Authentication Proxy Service Health Alarm,Default alarm that monitors the health status of VMware vSphere Authentication Proxy Service.,Medium,New in 6.5,
+VMware vSphere ESXi Dump Collector Health Alarm,Default alarm that monitors the health status of the VMware vSphere ESXi Dump Collector Service.,Low,,
+VMware vSphere Profile-Driven Storage Service Health Alarm,Default alarm that monitors the health status of the VMware vSphere Profile-Driven Storage Service.,Low,,
+vSAN hardware compatibility issues,Default alarm to monitor changes for the health tests related to vSAN hardware compatibility,Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Active multicast connectivity check',Default alarm to monitor changes for the health test 'Active multicast connectivity check',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Advanced vSAN configuration in sync',Default alarm to monitor changes for the health test 'Advanced vSAN configuration in sync',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'After 1 additional host failure',Default alarm to monitor changes for the health test 'After 1 additional host failure',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'All hosts contributing stats',Default alarm to monitor changes for the health test 'Checks if all host are contributing performance stats',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'All hosts have a vSAN vmknic configured',Default alarm to monitor changes for the health test 'All hosts have a vSAN vmknic configured',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'All hosts have matching multicast settings',Default alarm to monitor changes for the health test 'All hosts have matching multicast settings',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'All hosts have matching subnets',Default alarm to monitor changes for the health test 'All hosts have matching subnets',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Basic (unicast) connectivity check (normal ping)',Default alarm to monitor changes for the health test 'Basic (unicast) connectivity check (normal ping)',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Cluster health',Default alarm to monitor changes for the health group test 'Cluster health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Component metadata health',Default alarm to monitor changes for the health test 'Component metadata health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Congestion',Default alarm to monitor changes for the health test 'Congestion',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Controller disk group mode is VMware certified',Default alarm to monitor changes for the health test 'Controller disk group mode is VMware certified',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Controller driver is VMware certified',Default alarm to monitor changes for the health test 'Controller driver is VMware certified',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Controller firmware is VMware certified',Default alarm to monitor changes for the health test 'Controller firmware is VMware certified',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Controller is VMware certified for ESXi release',Default alarm to monitor changes for the health test 'Controller is VMware certified for ESXi release',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'CPU AES-NI is disabled on hosts',Default alarm to monitor changes for the health test 'CPU AES-NI is enabled on hosts',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Current cluster situation',Default alarm to monitor changes for the health test 'Current cluster situation',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Customer Experience Improvement Program (CEIP)',Default alarm to monitor changes for online health check 'Customer Experience Improvement Program (CEIP)',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Data health',Default alarm to monitor changes for the health group test 'Data health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Disk capacity',Default alarm to monitor changes for the health test 'Disk capacity',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Disk format version',Default alarm to monitor changes for the health test 'Disk format version',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'ESXi vSAN Health service installation',Default alarm to monitor changes for the health test 'ESXi vSAN Health service installation',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm for vMotion 'Basic (unicast) connectivity check (normal ping)',Default alarm for vMotion to monitor changes for the health test 'Basic (unicast) connectivity check (normal ping)',Disabled,Can disable if not using VSAN,High
+vSAN health alarm for vMotion 'MTU check (ping with large packet size)',Default alarm for vMotion to monitor changes for the health test 'MTU check (ping with large packet size)',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Home object',Default alarm to monitor changes for the health test 'Home object of iSCSI target service',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Host component limit',Default alarm to monitor changes for the health test 'Host component limit',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Host issues retrieving hardware info',Default alarm to monitor changes for the health test 'Host issues retrieving hardware info',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Hosts disconnected from VC',Default alarm to monitor changes for the health test 'Hosts disconnected from VC',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Hosts with connectivity issues',Default alarm to monitor changes for the health test 'Hosts with connectivity issues',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Invalid preferred fault domain on witness host',Default alarm to monitor changes for the health test 'Invalid preferred fault domain on witness host',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Invalid unicast agent',Default alarm to monitor changes for the health test 'Invalid unicast agent',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'iSCSI target service',Default alarm to monitor changes for the health group test 'iSCSI target service',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Limits health',Default alarm to monitor changes for the health group test 'Limits health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Memory pools (heaps)',Default alarm to monitor changes for the health test 'Memory pools (heaps)',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Memory pools (slabs)',Default alarm to monitor changes for the health test 'Memory pools (slabs)',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Metadata health',Default alarm to monitor changes for the health test 'Metadata health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'MTU check (ping with large packet size)',Default alarm to monitor changes for the health test 'MTU check (ping with large packet size)',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Multicast assessment based on other checks',Default alarm to monitor changes for the health test 'Multicast assessment based on other checks',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Network configuration',Default alarm to monitor changes for the health test 'Network configuration of iSCSI target service',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Network health',Default alarm to monitor changes for the health group test 'Network health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Network latency check',Default alarm to monitor changes for the health test 'Network latency check',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'No disk claimed on witness host',Default alarm to monitor changes for the health test 'No disk claimed on witness host',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Online health connectivity',Default alarm to monitor changes for online health check 'Online health connectivity',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Overall disks health',Default alarm to monitor changes for the health test 'Overall disks health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Performance data collection',Default alarm to monitor changes for the health test 'Checks statistics collection of vSAN Performance Service',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Performance service status',Default alarm to monitor changes for the health test 'Checks status of vSAN Performance service',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Physical disk component limit health',Default alarm to monitor changes for the health test 'Physical disk component limit health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Physical disk health',Default alarm to monitor changes for the health group test 'Physical disk health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Physical disk health retrieval issues',Default alarm to monitor changes for the health test 'Physical disk health retrieval issues',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Preferred fault domain unset',Default alarm to monitor changes for the health test 'Preferred fault domain unset',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Resync operations throttling',Default alarm to monitor changes for the health test 'Resync operations throttling',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'SCSI controller is VMware certified',Default alarm to monitor changes for the health test 'SCSI controller is VMware certified',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Service runtime status',Default alarm to monitor changes for the health test 'Service runtime status of iSCSI target service',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Site Latency Health',Default alarm to monitor changes for the health test 'Site Latency Health',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Software state health',Default alarm to monitor changes for the health test 'Software state health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'Software version compatibility',Default alarm to monitor changes for the health test 'Software version compatibility',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Space efficiency configuration consistency',Default alarm to monitor changes for the health test 'Space efficiency configuration consistency',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Space efficiency usage health',Default alarm to monitor changes for the health test 'Space efficiency usage health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Stats DB object',Default alarm to monitor changes for the health test 'Checks status of vSAN Performance Service stats DB object',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Stats DB object conflicts',Default alarm to monitor changes for the health test 'Checks stats DB object conflicts',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Stats master election',Default alarm to monitor changes for the health test 'Checks stats master of vSAN Performance Service',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'Stretched cluster health',Default alarm to monitor changes for the health group test 'Stretched cluster health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Time is not synchronized across hosts and VC,Default alarm to monitor changes for the health test 'Time is synchronized across hosts and VC',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Unexpected number of fault domains',Default alarm to monitor changes for the health test 'Unexpected number of fault domains',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Unicast agent configuration inconsistent',Default alarm to monitor changes for the health test 'Unicast agent configuration inconsistent',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Unicast agent not configured',Default alarm to monitor changes for the health test 'Unicast agent not configured',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Unsupported host version',Default alarm to monitor changes for the health test 'Unsupported host version',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'vCenter or hosts are not connected to Key Management Servers',Default alarm to monitor changes for the health test 'vCenter and all hosts are connected to Key Management Servers',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vCenter state is authoritative',Default alarm to monitor changes for the health test 'vCenter state is authoritative',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Verbose mode',Default alarm to monitor changes for the health test 'Checks the verbose mode status of the vSAN performance service',Disabled,Can disable if not using VSAN,Low
+vSAN health alarm 'vSAN Build Recommendation Engine build recommendation',Default alarm to monitor changes for the health group test 'vSAN Build Recommendation Engine',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN Build Recommendation Engine Health',Default alarm to monitor changes for the health group test 'vSAN Build Recommendation Engine Health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN Build Recommendation Engine Health' configuration issues,Default alarm to monitor changes for the health group test 'vSAN Build Recommendation Engine' configuration issues,Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN CLOMD liveness',Default alarm to monitor changes for the health test 'vSAN CLOMD liveness',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN cluster configuration consistency',Default alarm to monitor changes for the health test 'vSAN cluster configuration consistency',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'vSAN cluster partition',Default alarm to monitor changes for the health test 'vSAN cluster partition',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN disk balance',Default alarm to monitor changes from health test 'vSAN disk balance',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN HCL DB Auto Update',Default alarm to monitor changes for the health test 'vSAN HCL DB Auto Update',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN HCL DB up-to-date',Default alarm to monitor changes for the health test 'vSAN HCL DB up-to-date',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN HCL health',Default alarm to monitor changes for the health group test 'vSAN HCL health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN Health Service up-to-date',Default alarm to monitor changes for the health test 'vSAN Health Service up-to-date',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN object health',Default alarm to monitor changes for the health test 'vSAN object health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'vSAN Performance Service health',Default alarm to monitor changes for the health group test 'vSAN Performance Service health',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'vSAN VM health',Default alarm to monitor changes for the health test 'vSAN VM health',Disabled,Can disable if not using VSAN,High
+vSAN health alarm 'vSphere cluster members do not match vSAN cluster members',Default alarm to monitor changes for the health test 'vSphere cluster members match vSAN cluster members',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Witness host fault domain misconfigured',Default alarm to monitor changes for the health test 'Witness host fault domain misconfigured',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Witness host not found',Default alarm to monitor changes for the health test 'Witness host not found',Disabled,Can disable if not using VSAN,Medium
+vSAN health alarm 'Witness host within vCenter cluster',Default alarm to monitor changes for the health test 'Witness host within vCenter cluster',Disabled,Can disable if not using VSAN,Low
+VSAN Health Service Alarm,Default alarm that monitors the health status of VSAN Health Services.,Disabled,Can disable if not using VSAN,Medium
+vSAN health service alarm for Overall Health Summary,Default alarm to monitor changes for the overall health summary,Disabled,Can disable if not using VSAN,Medium
+vService Manager Health Alarm,vService Manager service alarm to monitor health status,Medium,,
+vSphere APIs for IO Filtering (VAIO) Filter Management Operations,Default alarm that is triggered when vSphere APIs for IO Filtering (VAIO) operations (installing/uninstalling/upgrading filters) fail for some hosts in the cluster,Low,,
+vSphere Client Health Alarm,vSphere Client service alarm to monitor health status,Medium,,
+vSphere Distributed Switch MTU matched status,Default alarm to monitor changes in vSphere Distributed Switch MTU matched status,High,,
+vSphere Distributed Switch MTU supported status,Default alarm to monitor changes in vSphere Distributed Switch MTU supported status,High,,
+vSphere Distributed Switch teaming matched status,Default alarm to monitor changes in vSphere Distributed Switch teaming matched status,High,,
+vSphere Distributed Switch VLAN trunked status,Default alarm to monitor changes in vSphere Distributed Switch VLAN trunked status,High,,
+vSphere HA failover in progress,Default alarm to alert when vSphere HA is in the process of failing over virtual machines,High,,
+vSphere HA host status,Default alarm to monitor health of a host as reported by vSphere HA,Medium,,
+vSphere HA virtual machine failover failed,Default alarm to alert when vSphere HA failed to failover a virtual machine,High,,
+vSphere HA virtual machine monitoring action,Default alarm to alert when vSphere HA reset a virtual machine,Medium,,
+vSphere HA virtual machine monitoring error,Default alarm to alert when vSphere HA failed to reset a virtual machine,Medium,,
+vSphere HA VM Component Protection could not power off a virtual machine,Default alarm that is triggered when vSphere HA VM Component Protection cannot power off a virtual machine with an inaccessible datastore,Low,,
+vSphere UI Health Alarm,vSphere UI service alarm to monitor health status,Medium,New in 6.5,
+vSphere vCenter Host Certificate Management Mode,Alarm to monitor changes in the certificate management mode of vCenter Server,Low,,
