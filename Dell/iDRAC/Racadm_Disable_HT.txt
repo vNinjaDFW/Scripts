@@ -1,0 +1,13 @@
+# Get Current HT Settings
+racadm -r IP_ADDRESS -u root -p calvin get BIOS.ProcSettings.LogicalProc
+# Set HT Disable
+racadm -r IP_ADDRESS -u root -p calvin set BIOS.ProcSettings.LogicalProc Disabled
+# Create Job Q and Reboot
+racadm -r IP_ADDRESS -u root -p calvin jobqueue create BIOS.ProcSettings.1 -r pwrcycle -s TIME_NOW -e TIME_NA
+
+
+# Get the Logical Proc Settings, Set Profile to Custom, Disable MonitorWait
+racadm -r IP_ADDRESS -u root -p calvin get BIOS.ProcSettings.LogicalProc Disabled
+racadm -r IP_ADDRESS -u root -p calvin get BIOS.SysProfileSettings.SysProfile Custom
+racadm -r IP_ADDRESS -u root -p calvin get BIOS.SysProfileSettings.MonitorMwait Disabled
+racadm -r IP_ADDRESS -u root -p calvin jobqueue create BIOS.Setup.1-1 -r pwrcycle -s TIME_NOW -e TIME_NA
