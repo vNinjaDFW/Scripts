@@ -1,0 +1,7 @@
+$stopWatch = [system.diagnostics.stopwatch]::startNew()
+$stopWatch.Start()
+
+CODE GOES HERE
+
+$stopWatch.Stop()
+Write-Host "Total Runtime:" $stopWatch.Elapsed.Hours "Hours" $stopWatch.Elapsed.Minutes "minutes and" $stopWatch.Elapsed.Seconds "seconds." -BackgroundColor White -ForegroundColor Black
