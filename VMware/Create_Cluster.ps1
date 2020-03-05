@@ -1,5 +1,5 @@
 # *******************************************************************
-# * Title:            ESXi Server Build Configuration      
+# * Title:            Cluster Creation      
 # * Purpose:          This script creates & configures a new
 # *                   ESXi Cluster.
 # * Args:             vCenter & Cluster Name
