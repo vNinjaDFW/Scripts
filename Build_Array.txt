@@ -1,0 +1,11 @@
+# Build array for each vCenter
+$array = "XXX,XXX,XXX"
+for($count=0;$count -lt $array.length; $count++)
+ 
+{
+# Connect to vCenter
+Connect-viserver $array[$count]
+ 
+# perform the work you wanted to perform.  use the $array[$count] variable for the vCenter server name. (including the brackets)
+ 
+}
