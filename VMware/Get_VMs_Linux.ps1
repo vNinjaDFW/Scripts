@@ -19,7 +19,16 @@ Start-sleep -s 3
 # Connect to selected vCenter
 Connect-VIServer $vCenter -WarningAction SilentlyContinue
 
-$sCluster = (Read-Host "Please enter the name of the Cluster:")
+# Select the Cluster
+Write-Host ""
+Write-Host "Choose the Cluster:"
+Write-Host ""
+$iCluster = Get-Cluster | Select Name | Sort-object Name
+$i = 1
+$iCluster | %{Write-Host $i":" $_.Name; $i++}
+$dCluster = Read-Host "Enter the number for the Cluster:"
+$sCluster = $iCluster[$dCluster -1].Name
+Write-Host "You picked:" $sCluster"."
 
 $VMs = Get-Cluster $sCluster | Get-VM
 Foreach ($vm in $VMs){
