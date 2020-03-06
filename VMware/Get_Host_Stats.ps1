@@ -95,4 +95,3 @@ if (Get-ChildItem .\*.csv -ErrorAction SilentlyContinue) {
     New-Item -Path .\Reports -Name $DateStamp -ItemType Directory -Force -InformationAction SilentlyContinue  
     Move-Item -Path .\*.csv -Destination .\Reports\$DateStamp -Force
 }
-Invoke-Sqlcmd "EXEC Itreportdata.dbo.USPLoadHosttrackingDashBoard;" -ServerInstance "RCPONEMNT004" -username "svc_VropsLoader" -password "May81945" 
