@@ -1,0 +1,31 @@
+$activePortsList = "Uplink 2"
+$unusedPortsList = "dvUplink2"
+$standbyPortsList = "dvUplink2"
+Get-VDSwitch | Get-VDPortgroup | Get-VDUplinkTeamingPolicy| Set-VDUplinkTeamingPolicy -UnusedUplinkPort $unusedPortsList
+Get-VDSwitch | Get-VDPortgroup | Get-VDUplinkTeamingPolicy| Set-VDUplinkTeamingPolicy -ActiveUplinkPort $activePortsList
+Get-VDSwitch | Get-VDPortgroup | Get-VDUplinkTeamingPolicy| Set-VDUplinkTeamingPolicy -StandbyUplinkPort $standbyPortsList
+
+#Get current load balancing policy
+$VDS = VDS name
+$pg = Portgroup name
+Get-VDswitch -Name $VDS | Get-VDPortgroup $pg | Get-VDUplinkTeamingPolicy
+ 
+#Set new load balancing policy
+ 
+#Set Route based on IP hash
+Get-VDswitch -Name $VDS | Get-VDPortgroup $pg | Get-VDUplinkTeamingPolicy | Set-VDUplinkTeamingPolicy -LoadBalancingPolicy LoadBalanceIP
+ 
+#Set Route based on source MAC hash
+Get-VDswitch -Name $VDS | Get-VDPortgroup $pg | Get-VDUplinkTeamingPolicy | Set-VDUplinkTeamingPolicy -LoadBalancingPolicy LoadBalanceSrcMac
+ 
+#Set Route based on originating virtual port
+Get-VDswitch -Name $VDS | Get-VDPortgroup $pg | Get-VDUplinkTeamingPolicy | Set-VDUplinkTeamingPolicy -LoadBalancingPolicy LoadBalanceSrcId
+ 
+#Set Use explicit failover order
+Get-VDswitch -Name $VDS | Get-VDPortgroup $pg | Get-VDUplinkTeamingPolicy | Set-VDUplinkTeamingPolicy -LoadBalancingPolicy ExplicitFailover
+ 
+#Set Route based on physcial NIC load
+Get-VDswitch -Name $VDS | Get-VDPortgroup $pg | Get-VDUplinkTeamingPolicy | Set-VDUplinkTeamingPolicy -LoadBalancingPolicy LoadBalanceLoadBased
+ 
+#Remove $pg to apply new load balancing policy to all portgroups on the same VDS
+Get-VDSwitch "RP1_SaaS_vDS_AA" | Get-VDPortgroup | Get-VDUplinkTeamingPolicy | Set-VDUplinkTeamingPolicy -LoadBalancingPolicy LoadBalanceIP
