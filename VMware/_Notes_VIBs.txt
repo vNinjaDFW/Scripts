@@ -1,0 +1,54 @@
+# Get List of VEMs Installed on Host
+esxcli software vib list | grep -i vem
+
+# Get Storage Driver Actively Loaded
+esxcli software vib list | egrep lpfc
+
+# Remove VIB Installed on Host
+esxcli software vib remove -n PACKAGE_NAME
+
+# Install VIB on Host
+localcli software vib install -v /vmfs/VIB_FILE
+
+# Update VEM on Host
+esxupdate -b PACKAGE_NAME update
+
+# Get PowerPath VIB Installed
+esxcli software vib list | grep power*
+
+# Remove PowerPath
+esxcli software vib remove --vibname=powerpath.plugin.esx --vibname=powerpath.cim.esx --vibname=powerpath.lib.esx
+
+esxcli storage core claimrule list
+
+# Get Dell VIB Installed
+localcli software vib list | grep Dell*
+
+# Remove Dell OpenManage
+localcli software vib list | grep Dell*
+localcli software vib remove -n OpenManage
+
+# Get HBA driver version
+for a in $(esxcfg-scsidevs -a |awk '{print $2}') ;do vmkload_mod -s $a | grep -i Version ;done
+
+# Get HBA Firmware version
+/usr/lib/vmware/vmkmgmt_keyval/vmkmgmt_keyval -a | more
+
+# Remove iSCSI VIBs on Dell if ScratchConfig doesn't stay
+localcli software vib remove -n scsi-be2iscsi -n ima-be2iscsi
+
+# Identify HBAs
+esxcfg-scsidevs -a
+esxcli fcoe nic list
+
+# Identify NICs
+esxcfg-nics -l
+
+1- Verify the HBA in the esxi shell
+esxcfg-fcoe -d vmnic#      where # is the vmnic number, 2, 3, 10, 11
+2- assign the FCoE card to the configuration
+esxcfg-fcoe -V vmnic#
+
+#Make HBAs come online
+esxcli fcoe nic discover -n vmnic2
+esxcli fcoe nic discover -n vmnic3
