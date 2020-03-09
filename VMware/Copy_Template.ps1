@@ -2,7 +2,7 @@
 SYNOPSIS
 	Copy Template to another vCenter
 Description
-	Conver Template to VM, Export VM to OVF, Convert VM to Template, Deploy OVF, Convert VM to Template
+	Convert Template to VM, Export VM to OVF, Convert VM to Template, Deploy OVF, Convert VM to Template
 .NOTES
     File Name		: Copy_Template.ps1
     Author			: Ryan Patel
