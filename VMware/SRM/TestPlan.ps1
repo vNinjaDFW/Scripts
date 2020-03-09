@@ -4,6 +4,6 @@ Connect-VIServer -Server RECOVERY_SERVER -Credential $credential
 Connect-SrmServer -Credential $credential -RemoteCredential $credential
 CLS
 
-# SaaS
+# Go Time
 Get-Date -DisplayHint Time
 Get-SrmRecoveryPlan -Name "First_Plan" | Start-SrmRecoveryPlan -RecoveryMode Test -Confirm:$false
