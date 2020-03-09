@@ -21,7 +21,7 @@
 
 #Define the log file
 $Datestamp = Get-Date -Uformat %Y%m%d
-$LogPath = "\\rp1rrinas01\platform\ScriptLogs\Storage\"
+$LogPath = "\\SERVER\ScriptLogs\Storage\"
 $FileName = $LogPath + $Datastore + "_AddNewVMs_" + $Datestamp + ".txt"
 
 #Start Logging
