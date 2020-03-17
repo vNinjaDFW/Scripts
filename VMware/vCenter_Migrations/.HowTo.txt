@@ -2,7 +2,7 @@
 .\0_Create_vSS_From_vDS
 .\1_Migrate_pNIC.ps1 -p Active
 .\2_Migrate_VMKs.ps1
-.\3_Mig-VMs-toVss.ps1
+.\3_Mig-VMs-to-VSS.ps1
 .\4_Remove-from-vDS.ps1
 .\5_Del-Hosts.ps1
 .\6_Add-Hosts.ps1
