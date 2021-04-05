@@ -1,17 +1,10 @@
-This TF configuration, deploys the following infrastructure in Oracle Cloud Infrastructure.
-
-Bastion
-
-Jumphost
-
-Subnets
-
-Route Tables
-
-Network Security Groups
-
-Security Lists
-
-NAT, Internet & Service Gateways
-
-Oracle Cloud VMware Solution SDDC
+# *******************************************************************
+# * Title:            OCVS Demo Environment
+# * Purpose:          This script will deploy OCVS, Bastion, Jumphost
+# *                   and all subnets, RTs, NSGs, SLs, GWs, and VLANs.
+# * Author:           Ryan Patel
+# * Creation Date:    04/05/2021
+# * Version:          1.0
+# * Update Log:
+# *    
+# *******************************************************************
