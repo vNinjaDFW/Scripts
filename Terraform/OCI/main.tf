@@ -1,3 +1,14 @@
+# *******************************************************************
+# * Title:            OCVS Demo Environment
+# * Purpose:          This script will deploy OCVS, Bastion, Jumphost
+# *                   and all subnets, RTs, NSGs, SLs, GWs, and VLANs.
+# * Author:           Ryan Patel
+# * Creation Date:    04/05/2021
+# * Version:          1.0
+# * Update Log:
+# *    
+# *******************************************************************
+
 provider "oci" {
   tenancy_ocid     = var.tenancy_ocid
   region           = var.region
@@ -3407,12 +3418,12 @@ resource "oci_ocvp_sddc" "Demo-sddc" {
     nsx_edge_vtep_vlan_id = oci_core_vlan.VLAN-Demo-sddc-NSX-Edge-VTEP.id
     nsx_vtep_vlan_id = oci_core_vlan.VLAN-Demo-sddc-NSX-VTEP.id
     provisioning_subnet_id = oci_core_subnet.Subnet-Provisioning.id
-	provisioning_vlan_id = oci_core_vlan.VLAN-Demo-sddc-Provisioning-Net.id
-	replication_vlan_id = oci_core_vlan.VLAN-Demo-sddc-Replication-Net.id
-	ssh_authorized_keys = var.ssh_auth_keys
+    provisioning_vlan_id = oci_core_vlan.VLAN-Demo-sddc-Provisioning-Net.id
+    replication_vlan_id = oci_core_vlan.VLAN-Demo-sddc-Replication-Net.id
+    ssh_authorized_keys = var.ssh_auth_keys
     vmotion_vlan_id = oci_core_vlan.VLAN-Demo-sddc-vMotion.id
     vmware_software_version = var.sddc_version
-	vsan_vlan_id = oci_core_vlan.VLAN-Demo-sddc-vSAN.id
+    vsan_vlan_id = oci_core_vlan.VLAN-Demo-sddc-vSAN.id
     vsphere_vlan_id = oci_core_vlan.VLAN-Demo-sddc-vSphere.id
 
     #Optional
