@@ -591,7 +591,7 @@ resource "oci_core_instance" "Bastion" {
 		ocpus = "1"
 	}
 	source_details {
-		source_id = var.bastion_image
+		source_id = var.bastion_image[var.region]
 		source_type = "image"
 	}
 }
@@ -636,7 +636,7 @@ resource "oci_core_instance" "Jumpbox" {
 		ocpus = "2"
 	}
 	source_details {
-		source_id = var.jumphost_image
+		source_id = var.jumphost_image[var.region]
 		source_type = "image"
 	}
 }
