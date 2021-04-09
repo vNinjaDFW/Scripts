@@ -8,8 +8,6 @@ variable "vcn_cidr" {}
 variable "pub_cidr" {}
 variable "priv_cidr" {}
 variable "provision_cidr" {}
-variable "bastion_image" {}
-variable "jumphost_image" {}
 variable "sddc_cidr" {}
 variable "sddc_display_name" {}
 variable "sddc_version" {}
@@ -27,3 +25,71 @@ variable "sddc_HCX_cidr" {}
 variable "sddc_NSX-VTEP_cidr" {}
 variable "sddc_vSphere_cidr" {}
 variable "sddc_NSX-Edge-VTEP_cidr" {}
+
+variable "bastion_image" {
+    type = map
+    default = {
+        // Oracle-provided image "Oracle-Linux-8.3-2021.01.12-0"
+        ap-chuncheon-1 = "ocid1.image.oc1.ap-chuncheon-1.aaaaaaaaxenigwmrii5wccxtgsthiz4ag23b5bgn7ob7bi2h6jqybxoykpfa"
+		ap-hyderabad-1 = "ocid1.image.oc1.ap-hyderabad-1.aaaaaaaaxqkhywjuqhy3m63h54uvduhuktro73yoedcgl4v4ivzd4bfib34a"
+		ap-melbourne-1 = "ocid1.image.oc1.ap-melbourne-1.aaaaaaaa7nzj2rhkeroao4spxtc62njkexfhujbyidft4rfg6ombz6rsjhiq"
+		ap-mumbai-1 = "ocid1.image.oc1.ap-mumbai-1.aaaaaaaaco3jty4kh7dpe64eqvrdyiwku47xzlw3axkwmydnvu3tyis54zsq"
+		ap-osaka-1 = "ocid1.image.oc1.ap-osaka-1.aaaaaaaaaaflwkmdpwqfxb5yrrtnmtg4mfz7m6qxlmmo6q36asswaupvenya"
+		ap-seoul-1 = "ocid1.image.oc1.ap-seoul-1.aaaaaaaaphdlaz5l22lofs4kyy2kyquxvhzqzfraqi4lofqqzv7fm6xpwuhq"
+		ap-sydney-1 = "ocid1.image.oc1.ap-sydney-1.aaaaaaaafznhz4tprj64tk2p6ufwwl4ixy5v57gddw737de3lrap3txwiobq"
+		ap-tokyo-1 = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaahrl6hfpirg4agyxmqvl7uqo4bchgywkxqaz6phsocqqucupci7ca"
+		ca-montreal-1 = "ocid1.image.oc1.ca-montreal-1.aaaaaaaaz2woovzo5ttaxs4bp2lk4fyznvrti4aoaabtgxalusnswj7al2xq"
+		ca-toronto-1 = "ocid1.image.oc1.ca-toronto-1.aaaaaaaabzt5jp2e3sz33ha7ut7bywksbyr6drptcylfyll72gt4c6eqhm3q"
+		eu-amsterdam-1 = "ocid1.image.oc1.eu-amsterdam-1.aaaaaaaapm2ubh2m2f7xo2cxfkmer6iprr3hsjsyhx2y6bqhf7nr5y2jbuma"
+		eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa3qkhrcj4xo5beoffschi2ofagkufpc6bp2mnkcglpsq4pivxp2dq"
+		eu-zurich-1 = "ocid1.image.oc1.eu-zurich-1.aaaaaaaatzcqiteqzsdha3pog7fpmawsasa2yy6zz72hipt2sfvnkbxkt5ya"
+		me-dubai-1 = "ocid1.image.oc1.me-dubai-1.aaaaaaaaly3fn552rtwcktvf3shjlhismbyygy3auc7zcmpsbtxuhhn5imlq"
+		me-jeddah-1 = "ocid1.image.oc1.me-jeddah-1.aaaaaaaaqxaglfy2qwsmuq3o5e7ym4clzvoa2htgwdkqnz6yr6ehu6tj3mwa"
+		sa-santiago-1 = "ocid1.image.oc1.sa-santiago-1.aaaaaaaac7tnhf7prosufgv5hxpzsdug3gb3bt5tgsrm7h46qqd5hidazlda"
+		sa-saopaulo-1 = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaaxrjzebjndw5uh2uhr4r5mcrco3j3s7cdtdiacqpph2a4ifhqbjnq"
+		uk-cardiff-1 = "ocid1.image.oc1.uk-cardiff-1.aaaaaaaaifq35ao2ptujbp3f2wjaswdgepnuy6bqzyoxq5xyfjpv5i74wpzq"
+		uk-london-1 = "ocid1.image.oc1.uk-london-1.aaaaaaaale63qnlvsxbcczr6wipotgxq6x7ccj7efdovifxzkcvzc6j3jd4a"
+		us-ashburn-1 = "ocid1.image.oc1.iad.aaaaaaaaffp3cnkpfxibzrdkfnxbitkgxk7al33rrhpzhfnrhfv7ml2xdpyq"
+		us-gov-ashburn-1 = "ocid1.image.oc3.us-gov-ashburn-1.aaaaaaaacjrsxzhumab2mf5csszmmwaut57rqdcmsixav7qfdye2zfdunkfa"
+		us-gov-chicago-1 = "ocid1.image.oc3.us-gov-chicago-1.aaaaaaaahcwvjfxvfmly3lbmt2uf4iv5uoim6oqoydb325p4nj3lpadwx5ua"
+		us-gov-phoenix-1 = "ocid1.image.oc3.us-gov-phoenix-1.aaaaaaaafy3jpaoismauhsn7x6qy2gdlpihcdzte2mvy4auxdkrhn4zchztq"
+		us-langley-1 = "ocid1.image.oc2.us-langley-1.aaaaaaaadx5tzige7o6ickvl44l2voo5ssd4g6u5hellkprm3pnaxehscxza"
+		us-luke-1 = "ocid1.image.oc2.us-luke-1.aaaaaaaaige5v6nzhvucfne72hdrxzermwdbhv3ixnyvzexo2blqg46mwssq"
+		us-phoenix-1 = "ocid1.image.oc1.phx.aaaaaaaatgj6aodlwvyrwlmd6pjrfk3ccr4fv23mw56l3gwsy6cnze56d4ja"
+		us-sanjose-1 = "ocid1.image.oc1.us-sanjose-1.aaaaaaaarlnjigwafohy5blxopsoi2lhwgxugd5g7mtrqvrj4ujzx23mnv6a"
+    }
+}
+
+variable "jumphost_image" {
+    type = map
+    default = {
+        // Oracle-provided image "Windows-Server-2019-Standard-Edition-VM-E3-2021.02.13-0"
+        ap-chuncheon-1 = "ocid1.image.oc1.ap-chuncheon-1.aaaaaaaatubanodym4uv3x2qaoq7elnntrajyurn4nqo5s5webg7aodjqmia"
+        ap-hyderabad-1 = "ocid1.image.oc1.ap-hyderabad-1.aaaaaaaakkrj6jz47d5cqxbo2bw33n5dheb3wroueferq65xhu5iq67a27sq"
+        ap-melbourne-1 = "ocid1.image.oc1.ap-melbourne-1.aaaaaaaaggyipco74ftkg4m362iyyuqiskmoo7r5r4trqmkz2j7l2afbttya"
+        ap-mumbai-1 = "ocid1.image.oc1.ap-mumbai-1.aaaaaaaaab7gvp5xiazonut7pgjjtfl7dmohktrok6gzv6pve5onvhhdnnoq"
+        ap-osaka-1 = "ocid1.image.oc1.ap-osaka-1.aaaaaaaap4z3hjhdqbgkihep3etek7be5dlobks7idxqdvybs3gk2rbesfiq"
+        ap-seoul-1 = "ocid1.image.oc1.ap-seoul-1.aaaaaaaasmospcmeh7fc75u3cxqgkkxpdif3zeoilmhgpm6egf5g45nrsrlq"
+        ap-sydney-1 = "ocid1.image.oc1.ap-sydney-1.aaaaaaaawtl7w3wlulegf5tt23vyjucoi6idulyramc3hgvpe3vwcjwk6oia"
+        ap-tokyo-1 = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaa7ex4dl67tvjffrzsa2qxiizbbkjnf3p4vrajxzjz2t2dhu4ktnva"
+        ca-montreal-1 = "ocid1.image.oc1.ca-montreal-1.aaaaaaaavvpgku4e6mrmgliwrjxwaih6uvygfycauzlg4iowo5r2vrs3yhda"
+        ca-toronto-1 = "ocid1.image.oc1.ca-toronto-1.aaaaaaaacv57zt6izl3ug55uxopygn2eakojptnypqgv5booxoq6vdhuusra"
+        eu-amsterdam-1 = "ocid1.image.oc1.eu-amsterdam-1.aaaaaaaa55cblvc7jf7rgsvo5qrh5t6lhmb3ykgd34ym6pejq5oqgni7obiq"
+        eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaavhfoaoxpognwoerpw2azcrtekywgzugmnt4lqmi2oq5ltdqal74q"
+        eu-zurich-1 = "ocid1.image.oc1.eu-zurich-1.aaaaaaaankjviwg7o4uyrbqsfklkell2atdnzzinwxryowoml5nbtthcspoq"
+        me-dubai-1 = "ocid1.image.oc1.me-dubai-1.aaaaaaaafk7azqkexrp52tcsajt4ebkivlb7x2im3rcysd42nyukfxwdouda"
+        me-jeddah-1 = "ocid1.image.oc1.me-jeddah-1.aaaaaaaaq2e4tbqybnlapllmyhdu7kno4tn3xj3er3hurop4ws6ro2ppmmea"
+        sa-santiago-1 = "ocid1.image.oc1.sa-santiago-1.aaaaaaaakcf2xshg7sq5m3ijtsiuqftqj4znry32a4jj5lsfhzpawzm5j37a"
+        sa-saopaulo-1 = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaasjjcbj5flamve6z232crf4t3vwhdw6gsgogvzijy7umcyjfe4blq"
+        uk-cardiff-1 = "ocid1.image.oc1.uk-cardiff-1.aaaaaaaajass3zvseyizubhndrv2tgdib4ijzxxbbpst5gg5qvq2ajhcd52a"
+        uk-london-1 = "ocid1.image.oc1.uk-london-1.aaaaaaaaxuu4lblgswxrio6lnel3fi4l3nbwmorl2olcwo7ytfxdia7r7n3q"
+        us-ashburn-1 = "ocid1.image.oc1.iad.aaaaaaaalihxttg4gcn5gakhgxgkmlqbh5rtpulhv47ftaydsrh2ilu4eeya"
+        us-gov-ashburn-1 = "ocid1.image.oc3.us-gov-ashburn-1.aaaaaaaafs5lnbimarqj6jjd22xscnqtdq3ir5qyjrikoalm2gtzgmu7ymmq"
+        us-gov-chicago-1 = "ocid1.image.oc3.us-gov-chicago-1.aaaaaaaalvgrqbihw62a3q7gepgbcinywvcczuehapdt7hzmuznrfvaoqzqa"
+        us-gov-phoenix-1 = "ocid1.image.oc3.us-gov-phoenix-1.aaaaaaaafgyik7j25rqitrl73brj27kvhu67zrgsu7rbodj2wru5f2ylhdva"
+        us-langley-1 = "ocid1.image.oc2.us-langley-1.aaaaaaaacitvtu3cw7xwbkmjsc4lrpxi2f6s2zuznyjev5baadhue6ejcglq"
+        us-luke-1 = "ocid1.image.oc2.us-luke-1.aaaaaaaaxk5uazx7og7wbxjngoysv7cmmwwle4lamkeonvzaeairuuejo44a"
+        us-phoenix-1 = "ocid1.image.oc1.phx.aaaaaaaajuo2ofct2huvrdq272to7sd6kvk6e7gwv5snqxjyyihx2xodb7ga"
+        us-sanjose-1 = "ocid1.image.oc1.us-sanjose-1.aaaaaaaawkvjhfa7cwra7a6u7f5n6gktvqfhhh4a52d6eckod3pwwhbwehia"
+    }
+}
