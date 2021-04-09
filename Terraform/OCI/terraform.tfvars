@@ -11,16 +11,6 @@ region = "XXX"
 # SSH Key Pair (Public Key)
 ssh_auth_keys = "Enter your Public SSH Key Here"
 
-# Bastion Config
-# Set to Oracle-Linux-8.3-2021.01.12-0
-# Get OCID based on Region - https://docs.oracle.com/en-us/iaas/images/image/9bff226a-3923-48d7-9931-c9869b36fbf1/
-bastion_image = "ocid1.image.oc1.ca-toronto-1.aaaaaaaabzt5jp2e3sz33ha7ut7bywksbyr6drptcylfyll72gt4c6eqhm3q"
-
-# Jumphost Config
-# Set to Windows-Server-2019-Standard-Edition-VM-E3-2021.02.13-0
-# Get OCID based on Region - https://docs.oracle.com/en-us/iaas/images/image/768b4e2b-1b04-49eb-ac1e-8c16a73884ef/
-jumphost_image = "ocid1.image.oc1.ca-toronto-1.aaaaaaaacv57zt6izl3ug55uxopygn2eakojptnypqgv5booxoq6vdhuusra"
-
 # VCN Config
 vcn_name = "v7-Demo"
 vcn_dns = "v7Demo"
