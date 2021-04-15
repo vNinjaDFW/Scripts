@@ -8,12 +8,6 @@
 # * Update Log:
 # *    
 # *******************************************************************
-
-provider "oci" {
-  tenancy_ocid     = var.tenancy_ocid
-  region           = var.region
-}
-
 # ------ Retrieve Regional / Cloud Data
 # -------- Get a list of Availability Domains
 data "oci_identity_availability_domains" "AvailabilityDomains" {
@@ -591,7 +585,7 @@ resource "oci_core_instance" "Bastion" {
 		ocpus = "1"
 	}
 	source_details {
-		source_id = var.bastion_image[var.region]
+		source_id = var.bastion_image
 		source_type = "image"
 	}
 }
@@ -636,7 +630,7 @@ resource "oci_core_instance" "Jumpbox" {
 		ocpus = "2"
 	}
 	source_details {
-		source_id = var.jumphost_image[var.region]
+		source_id = var.jumphost_image
 		source_type = "image"
 	}
 }
