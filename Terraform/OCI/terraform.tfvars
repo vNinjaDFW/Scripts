@@ -1,5 +1,5 @@
 # Enter your Tenancy OCID
-tenancy_ocid = "XXX"
+tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaarjmezrk7x6sdytr4qbpp36qulkilvvjjsmjod7tgnjzaqaxekkva"
 
 # Enter your Compartment OCID
 compartment_ocid = "XXX"
@@ -12,8 +12,8 @@ region = "XXX"
 ssh_auth_keys = "Enter your Public SSH Key Here"
 
 # VCN Config
-vcn_name = "v7-Demo"
-vcn_dns = "v7Demo"
+vcn_name = "labESXi7"
+vcn_dns = "labESXi7"
 vcn_cidr = "172.16.0.0/16"
 pub_cidr = "172.16.10.0/24"
 priv_cidr = "172.16.11.0/24"
@@ -21,11 +21,11 @@ provision_cidr = "172.16.0.0/25"
 
 # SDDC Config
 sddc_cidr = "172.16.0.0/21"
-sddc_display_name = "Demo-SDDC-v7"
+sddc_display_name = "labESXi7"
 sddc_esxi_hosts_count = "3"
 sddc_is_hcx_enabled = "true"
 sddc_workload_network_cidr = "172.20.0.0/24"
-sddc_instance_display_name_prefix = "sddc-ESXI"
+sddc_instance_display_name_prefix = "labESXi7"
 sddc_repl_cidr = "172.16.4.0/25"
 sddc_nsxEdgeUplink1_cidr = "172.16.0.128/25"
 sddc_nsxEdgeUplink2_cidr = "172.16.1.0/25"
