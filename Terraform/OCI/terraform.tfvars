@@ -6,10 +6,14 @@ compartment_ocid = "XXX"
 
 # Region to Deploy
 # Get the Region Identifier - https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
-region = "XXX"
+region = "us-phoenix-1"
 
 # SSH Key Pair (Public Key)
 ssh_auth_keys = "Enter your Public SSH Key Here"
+
+# Assign Private IPs
+bastionIP = "172.16.10.10"
+jumphostIP = "172.16.11.11"
 
 # VCN Config
 vcn_name = "labESXi7"
@@ -36,6 +40,12 @@ sddc_HCX_cidr = "172.16.3.192/26"
 sddc_NSX-VTEP_cidr = "172.16.2.0/25"
 sddc_vSphere_cidr = "172.16.3.128/26"
 sddc_NSX-Edge-VTEP_cidr = "172.16.1.128/25"
+
+# Billing SKU
+#sddc_initial_sku = "HOUR"
+sddc_initial_sku = "MONTH"
+#sddc_initial_sku = "ONE_YEAR"
+#sddc_initial_sku = "THREE_YEARS"
 
 # VMware Software Version - The version being deployed should not have "#"
 sddc_version = "7.0 update 1"
