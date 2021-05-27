@@ -1,11 +1,13 @@
 # *******************************************************************
-# * Title:            OCVS Demo Environment
-# * Purpose:          This script will deploy OCVS, Bastion, Jumphost
-# *                   and all subnets, RTs, NSGs, SLs, GWs, and VLANs.
-# * Author:           Ryan Patel
-# * Creation Date:    04/05/2021
-# * Version:          1.0
-# * Update Log:
+# * Title:				OCVS Demo Environment
+# * Purpose:			This script will deploy OCVS, Bastion, Jumphost
+# *						and all subnets, RTs, NSGs, SLs, GWs, and VLANs.
+# * Author:				Ryan Patel
+# * Creation Date:		04/05/2021
+# * Version:			1.2
+# * Update Log:			05/19/2021	Added code to get latest Oracle Linux Image
+# *						Added code to get latest Windows Image
+# *						05/26/2021	Added code for initial_sku
 # *    
 # *******************************************************************
 # ------ Retrieve Regional / Cloud Data
@@ -40,9 +42,32 @@ locals {
 # ------ Get List Service OCIDs
 data "oci_core_services" "RegionServices" {
 }
-# ------ Get List Images
-data "oci_core_images" "InstanceImages" {
-    compartment_id           = var.compartment_ocid
+# ------ Get Linux Images
+data "oci_core_images" "bastionimage" {
+    compartment_id = var.compartment_ocid
+	operating_system = "Oracle Linux"
+	operating_system_version = "8"
+	shape = "VM.Standard.E3.Flex"
+}
+
+output "latest_ol8_image" {
+    value = data.oci_core_images.bastionimage.images.0.id
+}
+# ------ Get Windows Images
+data "oci_core_images" "windows-2019-vm" {
+  compartment_id = var.compartment_ocid
+  operating_system = "Windows"
+  filter {
+    name = "display_name"
+    values = ["^Windows-Server-2019-Standard-Edition-VM-([\\.0-9-]+)$"]
+    regex  = true
+  }
+}
+output "windows-2019-latest-vm-name" {
+  value = data.oci_core_images.windows-2019-vm.images.0.display_name
+}
+output "windows-2019-latest-vm-id" {
+  value = data.oci_core_images.windows-2019-vm.images.0.id
 }
 # ------ Get OCVS Versions
 data "oci_ocvp_supported_vmware_software_versions" "ocvs_versions" {
@@ -53,7 +78,7 @@ data "oci_ocvp_supported_vmware_software_versions" "ocvs_versions" {
 # ------ Create Compartment - Root True
 # ------ Root Compartment
 locals {
-    Mycompartment_id              = var.compartment_ocid
+    Mycompartment_id = var.compartment_ocid
 }
 
 output "MycompartmentId" {
@@ -160,17 +185,6 @@ resource "oci_core_default_security_list" "SL-Public" {
             max = "22"
         }
     }
-    ingress_security_rules {
-        # Required
-        protocol    = "6"
-        source      = "0.0.0.0/0"
-        # Optional
-        source_type  = "CIDR_BLOCK"
-        tcp_options {
-            min = "80"
-            max = "80"
-        }
-    }
     # Optional
     display_name   = "SL-Public"
 }
@@ -190,17 +204,6 @@ resource "oci_core_security_list" "SL-Private" {
         destination = "0.0.0.0/0"
         # Optional
         destination_type  = "CIDR_BLOCK"
-    }
-    ingress_security_rules {
-        # Required
-        protocol    = "6"
-        source      = var.vcn_cidr
-        # Optional
-        source_type  = "CIDR_BLOCK"
-        tcp_options {
-            min = "22"
-            max = "22"
-        }
     }
     ingress_security_rules {
         # Required
@@ -570,6 +573,7 @@ resource "oci_core_instance" "Bastion" {
 	compartment_id = local.Mycompartment_id
 	create_vnic_details {
 		assign_public_ip = "true"
+		private_ip = var.bastionIP
 		subnet_id = oci_core_subnet.Subnet-Public.id
 	}
 	display_name = "Bastion"
@@ -581,11 +585,11 @@ resource "oci_core_instance" "Bastion" {
 	}
 	shape = "VM.Standard.E3.Flex"
 	shape_config {
-		memory_in_gbs = "16"
+		memory_in_gbs = "8"
 		ocpus = "1"
 	}
 	source_details {
-		source_id = var.bastion_image
+		source_id = data.oci_core_images.bastionimage.images.0.id
 		source_type = "image"
 	}
 }
@@ -618,6 +622,7 @@ resource "oci_core_instance" "Jumpbox" {
 	compartment_id = local.Mycompartment_id
 	create_vnic_details {
 		assign_public_ip = "false"
+		private_ip = var.jumphostIP
 		subnet_id = oci_core_subnet.Subnet-Private.id
 	}
 	display_name = "Jumphost"
@@ -630,7 +635,7 @@ resource "oci_core_instance" "Jumpbox" {
 		ocpus = "2"
 	}
 	source_details {
-		source_id = var.jumphost_image
+		source_id = data.oci_core_images.windows-2019-vm.images.0.id
 		source_type = "image"
 	}
 }
@@ -3402,7 +3407,7 @@ resource oci_core_vlan VLAN-Demo-sddc-NSX-Edge-Uplink-2 {
 }
 
 # ------ Create SDDC
-resource "oci_ocvp_sddc" "Demo-sddc" {
+resource "oci_ocvp_sddc" "demo-sddc" {
     #Required
     compartment_id = local.Mycompartment_id
     compute_availability_domain = element(data.oci_identity_availability_domains.AvailabilityDomains.availability_domains, 0)["name"]
@@ -3421,9 +3426,14 @@ resource "oci_ocvp_sddc" "Demo-sddc" {
     vsphere_vlan_id = oci_core_vlan.VLAN-Demo-sddc-vSphere.id
 
     #Optional
-    display_name = var.sddc_display_name
+    initial_sku = var.sddc_initial_sku
+	display_name = var.sddc_display_name
     hcx_vlan_id = oci_core_vlan.VLAN-Demo-sddc-HCX.id
     instance_display_name_prefix = var.sddc_instance_display_name_prefix
     is_hcx_enabled = var.sddc_is_hcx_enabled
     workload_network_cidr = var.sddc_workload_network_cidr
+}
+
+output "sddcid" {
+  value = oci_ocvp_sddc.demo-sddc.id
 }
